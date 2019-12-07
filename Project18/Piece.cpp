@@ -1,4 +1,4 @@
-#include "firstobjects.h"
+#include "Piece.h"
 
 class Piece {
 private:

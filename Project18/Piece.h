@@ -3,4 +3,4 @@
 #include <iostream>
 #include <stdlib.h>
 
-class Piece() {};
+class Piece {};
