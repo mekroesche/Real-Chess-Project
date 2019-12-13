@@ -18,8 +18,12 @@ public:
 	//returns the x coordinate of the spot
 	int getX();
 
+	void setX(int x);
+
 	//returns the y coordinate of the spot
 	int getY();
+
+	void setY(int y);
 
 private:
 	//internal variables

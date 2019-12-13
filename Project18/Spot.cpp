@@ -3,10 +3,9 @@
 class Spot {
 public:
 	//constructor
-	Spot(int x, int y, Piece piece) {
+	Spot(int x, int y) {
 		this->x_ = x; 
 		this->y_ = y;
-		this->piece_ = piece;
 	}
 
 	//return the piece on the board space
@@ -24,9 +23,17 @@ public:
 		return this->x_;
 	}
 
+	void setX(int x) {
+		this->x_ = x;
+	}
+
 	//return the y coordinate of the spot
 	int getY() {
 		return this->y_;
+	}
+
+	void setY(int y) {
+		this->y_ = y;
 	}
 
 private:
