@@ -3,14 +3,18 @@
 #include <iostream>
 #include <stdlib.h>
 #include "Piece.h"
-#include "Spot.h"
+#include "Pawn.h"
+#include <map>
 
 class Board {
 public:
-	void createBoard();
+	Board();
 	void resetBoard();
+	std::string getState();
+	void setPiece(std::pair<char, int> spot, Piece piece);
+	Piece getPiece(std::pair<char, int> spot);
 
 private:
-	Spot spotArray[8][8];
+	std::map<std::pair<char, int>, Piece> board_map_;
 
 };

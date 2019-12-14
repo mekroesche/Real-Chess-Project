@@ -1,25 +1,25 @@
 #include "Board.h"
 
-class Board {
-public:
-	//Constructor
-	Board() {
-		this->createBoard();
-	}
+//Constructor
+Board::Board() {
+	this->resetBoard();
+}
 
-	void createBoard() {
-		for (int row = 0; row < 8; row++) {
-			for (int col = 0; col < 8; col++) {
-				this->spotArray[row][col].setX(row);
-				this->spotArray[row][col].setY(col);
-			}
-		}
-	}
+//defines the board and sets the pieces
+void Board::resetBoard() {
+	this->setPiece(std::make_pair('A', 2), Pawn(std::make_pair('A',2), "white"));
+}
 
-	void resetBoard() {
-		this->spotArray[1][0].setPiece()
-	}
-private:
-	Spot spotArray[8][8];
+//changes which piece is occupying a spot
+void Board::setPiece(std::pair<char, int> spot, Piece piece) {
+	this->board_map_[spot] = piece;
+}
 
-};
+Piece Board::getPiece(std::pair<char, int> spot) {
+	return board_map_[spot];
+}
+
+std::string Board::getState() {
+	std::cout << "test";
+	//this->getPiece(std::make_pair('A', 2));
+}

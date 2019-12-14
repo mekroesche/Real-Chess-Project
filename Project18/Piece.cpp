@@ -1,29 +1,27 @@
 #include "Piece.h"
 
-class Piece {
-public:
-	Piece(std::string pieceColor) {
-		//this.setWhite(white);
-		if(pieceColor == "white") { piece_white_ = true; }
-	}
+//constructs with location and color
+Piece::Piece(std::pair<char, int> location, std::string pieceColor) {
+	//setting piece color
+	if(pieceColor == "white") { piece_white_ = true; }
+	else { piece_white_ = false; }
+	//sets piece location. necessary for determining possible moves
+	this->set_location(location);
+}
 //accessors
-	std::string get_piece_color() {
-		if (piece_white_) { return "white"; }
-		else { return "black"; }
-	}
+std::string Piece::get_piece_color() {
+	//returning piece color
+	if (piece_white_) { return "white"; }
+	else { return "black"; }
+}
 
-	//gets the current location of the piece
-	std::pair<int, int> get_location() {
-		return this->location_;
-	}
+//gets the current location of the piece
+std::pair<int, int> Piece::get_location() {
+	return this->location_;
+}
 
-	//changes the current location of the piece
-	void set_location(int x, int y) {
-		this->location_ = std::make_pair(x, y);
-	}
-private:
-//data
-	bool piece_white_;
-	std::pair<int, int> location_;
-	bool killed = false;
-};
+//changes the current location of the piece
+void Piece::set_location(std::pair<char,int> location) {
+	this->location_ = location;
+}
+
