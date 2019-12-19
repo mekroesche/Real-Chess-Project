@@ -8,6 +8,7 @@ Piece::Piece(std::pair<char, int> location, std::string pieceColor) {
 	//sets piece location. necessary for determining possible moves
 	this->set_location(location);
 }
+
 //accessors
 std::string Piece::get_piece_color() {
 	//returning piece color
@@ -24,4 +25,3 @@ std::pair<int, int> Piece::get_location() {
 void Piece::set_location(std::pair<char,int> location) {
 	this->location_ = location;
 }
-
